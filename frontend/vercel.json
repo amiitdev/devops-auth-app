@@ -3,5 +3,11 @@
     "outputDirectory": "dist",
     "devCommand": "npm run dev",
     "installCommand": "npm install --legacy-peer-deps",
-    "framework": "vite"
+    "framework": "vite",
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
 }
