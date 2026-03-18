@@ -8,7 +8,10 @@ services:
     environment:
       - MONGO_URL=${MONGO_URL}
       - JWT_SECRET=${JWT_SECRET}
-      - NODE_ENV=production
+      - NODE_ENV=${NODE_ENV} # Changed from 'production' to ${NODE_ENV}
+    # Optional: Add this for Linux compatibility
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
 
   frontend:
     build: ./frontend

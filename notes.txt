@@ -1,0 +1,22 @@
+┌─────────────────────────────────────────────────────────┐
+│           YOUR COMPLETE CI/CD PIPELINE                   │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│  Developer:                                              │
+│  └── Pushes code to GitHub                               │
+│                                                          │
+│         ↓                                                │
+│                                                          │
+│  Jenkins:                                                │
+│  ├── 1. Detects change (if webhook enabled)              │
+│  ├── 2. Pulls latest code                                 │
+│  ├── 3. Builds Docker images                              │
+│  ├── 4. Runs containers                                   │
+│  └── 5. Reports success/failure                           │
+│                                                          │
+│         ↓                                                │
+│                                                          │
+│  Users:                                                  │
+│  └── Access updated app at localhost:5173               │
+│                                                          │
+└─────────────────────────────────────────────────────────┘
