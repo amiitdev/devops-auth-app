@@ -44,7 +44,7 @@ PRODUCTION:
 app.use(
   cors({
     origin: isProduction
-      ? 'https://your-app.vercel.app' // 🔴 change this after deploy
+      ? 'https://devops-auth-app.vercel.app' // 🔴 change this after deploy
       : 'http://localhost:5173',
     credentials: true,
   }),

@@ -3,6 +3,10 @@ FROM node:20 AS build
 
 WORKDIR /app
 
+# Pass build arguments for environment variables
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
+
 COPY package*.json ./
 RUN npm install --legacy-peer-deps
 
