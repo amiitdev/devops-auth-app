@@ -1,486 +1,276 @@
-🚀 Full Stack Auth App with DevOps
+# 🚀 Full Stack Auth App with DevOps
+
+![Node](https://img.shields.io/badge/Node.js-20-green)
+![React](https://img.shields.io/badge/React-Vite-blue)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
+![Jenkins](https://img.shields.io/badge/Jenkins-CI/CD-red)
+
+A production-ready full-stack authentication system with modern DevOps practices.
+
+---
+
+## ✨ Overview
+
+This project demonstrates:
+
+- 🔐 Secure authentication using JWT + httpOnly cookies  
+- ⚛️ React frontend (Vite)  
+- 🟢 Node.js + Express backend  
+- 🍃 MongoDB database  
+- 🐳 Docker containerization  
+- ⚙️ Jenkins CI/CD pipeline  
 
-<p align="center"> <img src="https://img.shields.io/badge/Node.js-18-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /> <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" /> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white" /> </p><p align="center"> <b>A production-ready authentication system with modern DevOps practices</b> </p>
+---
 
-✨ Overview
+## 🌟 Features
 
-A complete full-stack authentication system that demonstrates secure user management combined with industry-standard DevOps practices. Perfect for learning modern web development and deployment workflows.
-🎯 What This Project Demonstrates
-Area Technologies & Practices
-Frontend React 18, Vite, Tailwind CSS, Zustand, React Router
-Backend Node.js, Express, MongoDB, JWT, bcrypt
-Security httpOnly cookies, password hashing, protected routes
-DevOps Docker, Docker Compose, Jenkins CI/CD
-State Management Zustand with persistent auth state
-📋 Table of Contents
+### 🔐 Authentication
+- User registration  
+- Secure login with JWT  
+- Protected routes  
+- Persistent session  
+- Logout  
 
-    Features
+### 🛡️ Security
+- Password hashing (bcrypt)  
+- httpOnly cookies  
+- CORS protection  
+- Environment-based config  
 
-    Tech Stack
+### 🎨 Frontend
+- Responsive UI (Tailwind CSS)  
+- Form validation  
+- Loading states  
+- Zustand state management  
 
-    Quick Start
+### ⚙️ DevOps
+- Docker containerization  
+- Docker Compose  
+- Jenkins CI/CD  
+- Env-based config  
 
-    Project Structure
+---
 
-    Environment Setup
+## 🧱 Tech Stack
 
-    Docker Deployment
+### Frontend
+- React (Vite)
+- Tailwind CSS
+- Zustand
+- Axios
+- React Router
 
-    Jenkins Pipeline
+### Backend
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JWT
+- bcrypt
+- cookie-parser
+- cors
 
-    Authentication Flow
+### DevOps
+- Docker
+- Docker Compose
+- Jenkins
 
-    API Documentation
+---
 
-    Troubleshooting
+## 📁 Project Structure
 
-    Roadmap
+    backend/
+    ├── controller/
+    ├── models/
+    ├── routes/
+    ├── middleware/
+    ├── lib/
+    ├── Dockerfile
+    └── server.js
 
-🌟 Features
-🔐 Authentication
+    frontend/
+    ├── src/
+    ├── components/
+    ├── store/
+    ├── Dockerfile
+    └── vite.config.js
 
-    User registration with email/password
+    docker-compose.yml
+    Jenkinsfile
+    README.md
 
-    Secure login with JWT tokens
+---
 
-    Protected routes and API endpoints
+## ⚙️ Environment Setup
 
-    Persistent login sessions
+### Backend (.env)
 
-    Secure logout
+    PORT=3000
+    MONGO_URL=mongodb://localhost:27017/authdb
+    JWT_SECRET=your_secret_key
+    NODE_ENV=development
 
-🛡️ Security
+### Frontend (.env)
 
-    Passwords hashed with bcrypt
+    VITE_API_URL=http://localhost:3000/api
 
-    JWT stored in httpOnly cookies
+### Production
 
-    CORS properly configured
+    VITE_API_URL=https://your-backend.onrender.com/api
 
-    Environment-based security settings
+---
 
-🎨 Frontend
+## 🚀 Local Development
 
-    Responsive design with Tailwind CSS
+### 1️⃣ Clone Repository
 
-    Form validation and error handling
+    git clone https://github.com/your-username/your-repo.git
+    cd your-repo
 
-    Loading states and user feedback
+### 2️⃣ Install Dependencies
 
-    Protected route navigation
+    cd backend
+    npm install
 
-⚙️ DevOps
+    cd ../frontend
+    npm install
 
-    Docker containerization
+### 3️⃣ Run Backend
 
-    Multi-container orchestration
+    cd backend
+    npm run dev
 
-    Jenkins CI/CD pipeline
+### 4️⃣ Run Frontend
 
-    Environment-based configuration
+    cd frontend
+    npm run dev
 
-🚀 Quick Start
-Prerequisites
+---
 
-    Node.js 18+
+## 🌐 App URLs
 
-    MongoDB (local or Atlas)
+- Frontend → http://localhost:5173  
+- Backend → http://localhost:3000  
 
-    Docker (optional)
+---
 
-    Git
+## 🐳 Docker Setup
 
-# Clone and run in one go
+### Build & Run
 
-git clone https://github.com/your-username/your-repo.git && \
-cd your-repo && \
-npm run install:all && \
-npm run dev
+    docker-compose up --build
 
-Manual Setup
-1️⃣ Clone Repository
-bash
+### Run in Background
 
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+    docker-compose up -d
 
-2️⃣ Install Dependencies
-bash
+### Stop Services
 
-# Install backend dependencies
+    docker-compose down
 
-cd backend && npm install
+---
 
-# Install frontend dependencies
+## ⚙️ Jenkins CI/CD Pipeline
 
-cd ../frontend && npm install
+### Pipeline Steps
 
-3️⃣ Configure Environment
+- Clone repository  
+- Install dependencies  
+- Build Docker images  
+- Run containers  
+- Inject environment variables  
 
-Create .env files as shown in the Environment Setup section.
-4️⃣ Start Development Servers
-bash
+### Jenkins Setup
 
-# Terminal 1: Start backend
+- Go to: Manage Jenkins → Credentials
+- Add:
+  - MONGO_URL
+  - JWT_SECRET
 
-cd backend && npm run dev
+### Run Pipeline
 
-# Terminal 2: Start frontend
+    Build Now
 
-cd frontend && npm run dev
+---
 
-5️⃣ Access Application
+## 🔐 Authentication Flow
 
-    Frontend: http://localhost:5173
+    Register → Hash Password → Save User  
+    Login → Compare Password → Generate JWT → Store Cookie  
+    Protected Route → Verify JWT → Get User  
+    Logout → Clear Cookie  
 
-    Backend API: http://localhost:3000/api
+---
 
-📁 Project Structure
-text
+## 🍪 Cookie Configuration
 
-📦 fullstack-auth-app
-├── 📂 backend
-│ ├── 📂 controller # Request handlers
-│ ├── 📂 models # Database models
-│ ├── 📂 routes # API routes
-│ ├── 📂 middleware # Auth middleware
-│ ├── 📂 lib # Utilities
-│ ├── 📄 server.js # Entry point
-│ └── 📄 Dockerfile # Backend Docker config
-│
-├── 📂 frontend
-│ ├── 📂 src
-│ │ ├── 📂 components # React components
-│ │ ├── 📂 pages # Page components
-│ │ ├── 📂 store # Zustand state
-│ │ └── 📂 utils # Helpers
-│ ├── 📄 Dockerfile # Frontend Docker config
-│ └── 📄 vite.config.js # Vite configuration
-│
-├── 📄 docker-compose.yml # Multi-container setup
-├── 📄 Jenkinsfile # CI/CD pipeline
-└── 📄 README.md
+| Environment | secure | sameSite |
+|------------|--------|----------|
+| Dev        | false  | lax      |
+| Prod       | true   | none     |
 
-🔧 Environment Setup
-Backend (.env)
-env
+---
 
-# Server Configuration
+## 🌐 CORS Configuration
 
-PORT=3000
-NODE_ENV=development
+    cors({
+      origin: FRONTEND_URL,
+      credentials: true
+    })
 
-# Database
+---
 
-MONGO_URL=mongodb://localhost:27017/authdb
+## ⚠️ Troubleshooting
 
-# Security
+### MongoDB Issue
 
-JWT_SECRET=your_super_secret_key_here_change_in_production
+    mongodb://host.docker.internal:27017/authdb
 
-Frontend (.env)
-env
+### Cookies Not Working
 
-# Development
+- Use credentials: true  
+- Check sameSite & secure  
 
-VITE_API_URL=http://localhost:3000/api
+### CORS Error
 
-# Production (use your deployed backend URL)
+- Do NOT use origin: '*'  
 
-# VITE_API_URL=https://your-backend.onrender.com/api
+### Wrong API URL
 
-Production Security Settings
-javascript
+- Fix VITE_API_URL  
 
-// Cookie configuration based on environment
-const cookieOptions = {
-httpOnly: true,
-secure: process.env.NODE*ENV === 'production', // HTTPS only in production
-sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-maxAge: 7 * 24 _ 60 _ 60 \_ 1000 // 7 days
-};
+---
 
-🐳 Docker Deployment
-Using Docker Compose (Recommended)
-bash
+## 🚀 Deployment
 
-# Build and start all services
+### Frontend
+- Vercel
 
-docker-compose up --build
+### Backend
+- Render / Railway / AWS
 
-# Run in background
+---
 
-docker-compose up -d
+## 📈 Future Improvements
 
-# View logs
+- Refresh tokens  
+- Docker Hub integration  
+- AWS deployment  
+- Unit testing  
+- GitHub Actions  
 
-docker-compose logs -f
+---
 
-# Stop all services
+## 👨‍💻 Author
 
-docker-compose down
+**Amit**  
+Full Stack Developer | DevOps Learner 🚀  
 
-Manual Docker Commands
-bash
+---
 
-# Build images
+## ⭐ Support
 
-docker build -t auth-backend ./backend
-docker build -t auth-frontend ./frontend
+If you like this project:
 
-# Run containers
-
-docker run -p 3000:3000 auth-backend
-docker run -p 5173:5173 auth-frontend
-
-Docker Compose Configuration
-yaml
-
-services:
-backend:
-build: ./backend
-ports: - "3000:3000"
-environment: - MONGO_URL=mongodb://mongo:27017/authdb
-depends_on: - mongo
-
-frontend:
-build: ./frontend
-ports: - "5173:5173"
-depends_on: - backend
-
-mongo:
-image: mongo:6
-volumes: - mongo-data:/data/db
-
-⚙️ Jenkins Pipeline
-Pipeline Stages
-groovy
-
-pipeline {
-agent any
-
-    stages {
-        stage('📥 Checkout') {
-            steps {
-                git 'https://github.com/your-username/your-repo.git'
-            }
-        }
-
-        stage('📦 Install Dependencies') {
-            parallel {
-                stage('Backend') {
-                    steps {
-                        dir('backend') { sh 'npm install' }
-                    }
-                }
-                stage('Frontend') {
-                    steps {
-                        dir('frontend') { sh 'npm install' }
-                    }
-                }
-            }
-        }
-
-        stage('🐳 Build Docker Images') {
-            steps {
-                sh 'docker-compose build'
-            }
-        }
-
-        stage('🚀 Deploy') {
-            steps {
-                sh 'docker-compose up -d'
-            }
-        }
-    }
-
-}
-
-Jenkins Setup Guide
-
-    Install Jenkins with Docker plugin
-
-    Add Credentials (Manage Jenkins → Credentials):
-
-        MONGO_URL - MongoDB connection string
-
-        JWT_SECRET - Secret for JWT tokens
-
-    Create Pipeline:
-
-        New Item → Pipeline
-
-        Select "Pipeline script from SCM"
-
-        Point to your repository
-
-📡 API Documentation
-Authentication Endpoints
-Method Endpoint Description Request Body Response
-POST /api/auth/register Create account {email, password, name} User object
-POST /api/auth/login Login user {email, password} User object
-POST /api/auth/logout Logout user - Success message
-GET /api/auth/profile Get profile - User profile
-Example Requests
-javascript
-
-// Register
-fetch('/api/auth/register', {
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-body: JSON.stringify({
-email: 'user@example.com',
-password: 'SecurePass123',
-name: 'John Doe'
-})
-});
-
-// Login (cookie will be set automatically)
-fetch('/api/auth/login', {
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-credentials: 'include', // Important for cookies
-body: JSON.stringify({
-email: 'user@example.com',
-password: 'SecurePass123'
-})
-});
-
-🔍 Troubleshooting
-Common Issues & Solutions
-🟡 MongoDB Connection Issues
-
-Problem: MongooseServerSelectionError: connect ECONNREFUSED
-
-Solutions:
-bash
-
-# Local MongoDB
-
-mongodb://localhost:27017/authdb
-
-# Docker MongoDB
-
-mongodb://host.docker.internal:27017/authdb
-
-# MongoDB Atlas
-
-mongodb+srv://username:password@cluster.mongodb.net/authdb
-
-🟡 CORS Errors
-
-Problem: Access-Control-Allow-Origin missing
-
-Solution in backend:
-javascript
-
-const corsOptions = {
-origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-credentials: true,
-optionsSuccessStatus: 200
-};
-app.use(cors(corsOptions));
-
-🟡 Cookies Not Working
-
-Checklist:
-
-    ✅ credentials: 'include' in frontend requests
-
-    ✅ CORS credentials: true in backend
-
-    ✅ SameSite and Secure settings match environment
-
-    ✅ Cookie domain matches (localhost vs production)
-
-🟡 JWT Verification Failed
-javascript
-
-// Check JWT_SECRET consistency
-console.log('JWT_SECRET exists:', !!process.env.JWT_SECRET);
-console.log('Token received:', !!req.cookies.token);
-
-🗺️ Roadmap
-✅ Completed
-
-    Basic authentication (register/login/logout)
-
-    JWT with httpOnly cookies
-
-    Protected routes
-
-    Docker containerization
-
-    Jenkins pipeline
-
-🔜 In Progress
-
-    Email verification
-
-    Password reset functionality
-
-    Rate limiting
-
-    Unit tests
-
-📅 Future Plans
-
-    Refresh tokens
-
-    OAuth (Google, GitHub)
-
-    Two-factor authentication
-
-    Kubernetes deployment
-
-    GitHub Actions CI/CD
-
-    Monitoring with Prometheus/Grafana
-
-📚 Learning Resources
-Authentication
-
-    JWT.io Introduction
-
-    httpOnly Cookies Explained
-
-DevOps
-
-    Docker Getting Started
-
-    Jenkins Handbook
-
-    Docker Compose Guide
-
-Full Stack
-
-    MERN Stack Tutorial
-
-    React with Vite
-
-👨‍💻 Author
-
-Amit
-Full Stack Developer & DevOps Enthusiast
-
-    🌐 Portfolio
-
-    💼 LinkedIn
-
-    🐙 GitHub
-
-🙏 Acknowledgments
-
-    MongoDB for database
-
-    React team for amazing frontend library
-
-    Docker for containerization
-
-    Jenkins community for CI/CD tools
-
-📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-<p align="center"> Made with ❤️ by Amit <br> ⭐ Star this repo if you found it helpful! </p>
+- ⭐ Star the repo  
+- 🔁 Share it  
+- 🚀 Keep building  
