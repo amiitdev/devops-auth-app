@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:3000/api
+
+### 🟢 1. Register User
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "name": "Amit",
+  "email": "amit@test.com",
+  "password": "123456"
+}
+
+###
+
+### 🟢 2. Login User (SAVE COOKIE)
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "email": "amit@test.com",
+  "password": "123456"
+}
+
+###
+
+### 🟢 3. Get Current User (Protected 🔐)
+# ⚠️ Replace token manually after login
+GET {{baseUrl}}/user
+
+
+###
+
+### 🟢 4. Logout User
+POST {{baseUrl}}/logout
+
+###
+
+### 🧪 5. Test Route
+GET {{baseUrl}}/test
